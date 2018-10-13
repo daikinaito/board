@@ -1,5 +1,6 @@
 <?php
 ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
 
 header('Content-Type: text/html; charset=UTF-8');
     if(isset($_POST['id']) and isset($_POST['password'])){
