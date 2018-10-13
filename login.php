@@ -14,7 +14,7 @@ header('Content-Type: text/html; charset=UTF-8');
                 session_start();
                 $_SESSION['id'] = $_POST['id'];
                 $_SESSION['login']=1;
-                header('Location: board.php');
+                header('Location: sample.php');
                 }
             }
             else{
