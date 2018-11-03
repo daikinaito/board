@@ -6,7 +6,8 @@
       header('Location: false.html');
     }
     require_once 'database_conf.php';
-
+    
+    $pdo = new \PDO($dsn, $DBUSER, $DBPASSWD, array(\PDO::ATTR_EMULATE_PREPARES => false));
     $sql = 'INSERT INTO comments (comment) VALUES (:comment)';
     $stmt = $pdo->prepare($sql);
 //    $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
