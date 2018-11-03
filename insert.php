@@ -7,8 +7,8 @@
     }
     require_once 'database_conf.php';
 
-    $sql = 'INSERT INTO comments (comment, userId) VALUES (:comment, )';
+    $sql = 'INSERT INTO comments (comment) VALUES (:comment)';
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
+//    $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
     $stmt->bindValue(':comment', $comment, \PDO::PARAM_STR);
     $stmt->execute();

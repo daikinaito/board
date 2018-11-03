@@ -11,23 +11,10 @@
         <input type="text" name="comment"><br>
         <button type=submit>クリック</button>
     </form>
-    <!--<?php-->
-    <!--header('Content-Type: text/html; charset=UTF-8');-->
-    <!--session_start();-->
-    <!--if(isset($_SESSION['login'])==false)-->
-    <!--{-->
-      <!--header('Location: false.html');-->
-    <!--}-->
-    <!--require_once 'database_conf.php';-->
-    <!---->
-    <!--$sql = 'SELECT comments, FROM comments, users WHERE comments.userId = users.id';-->
-    <!--$stmt = $pdo->prepare($sql);-->
-    <!--$stmt->execute();-->
-    <!--$messages = $stmt->fetchAll();-->
-    <!--foreach ($messages as $history) {-->
-      <!--$name = $history['name'];-->
-      <!--$comment = history['comment'];-->
-      <!--echo "$name : $comment";-->
-    <!--?>-->
+
+    <?php
+        require_once 'history.php';
+    ?>
+
 </body>
 </html>
