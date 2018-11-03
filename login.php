@@ -1,4 +1,5 @@
 <?php
+try{
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
@@ -25,4 +26,8 @@ header('Content-Type: text/html; charset=UTF-8');
                 echo $message;
             }
     }
+}catch(Exception $e){
+    echo 'error';
+    exit();
+}
 ?>
