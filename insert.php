@@ -7,7 +7,7 @@
     }
     require_once 'database_conf.php';
 
-    $sql = 'INSERT INTO `board` (name, comment, created) VALUES (:name, :comment, NOW())';
+    $sql = 'INSERT INTO comments (comment, userId) VALUES (:comment, )';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
     $stmt->bindValue(':comment', $comment, \PDO::PARAM_STR);
