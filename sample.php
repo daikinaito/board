@@ -1,2 +1,2 @@
 <?php
-  echo "成功！";
+  echo $_SESSION['name'];
