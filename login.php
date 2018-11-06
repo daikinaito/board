@@ -21,7 +21,7 @@ try {
             $_SESSION['id'] = $_POST['id'];
             $_SESSION['login'] = 1;
             $_SESSION['name'] = $name;
-            header('Location: input.html');
+            header('Location: sample.php');
         }
     } else {
         $message = 'IDまたはパスワードが間違っています。';
