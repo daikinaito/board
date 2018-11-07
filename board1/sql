@@ -1,0 +1,6 @@
+CREATE TABLE comments (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  comment LONGTEXT NOT NULL,
+  userId int(11) NOT NULL,
+  PRIMARY KEY (id)
+)
