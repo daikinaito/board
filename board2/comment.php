@@ -23,8 +23,6 @@
             <input type="text" name="comment"><br>
             <button type="submit">クリック</button>
         </form>
-    </body>
-
     <?php
         header('Content-Type: text/html; charset=utf8');
         require_once 'database_conf.php';
@@ -45,5 +43,6 @@
         }
 
     ?>
-    
+        <a href="logout.php">ログアウト</a>
+    </body>
 </html>
