@@ -11,10 +11,12 @@ try {
     $stmt->bindValue(':userId', $_POST['id'], \PDO::PARAM_INT);
     $stmt->bindValue(':name', $_POST['name'], \PDO::PARAM_STR);
     $stmt->bindValue(':password', $_POST['password'], \PDO::PARAM_STR);
+    $hoge = $stmt->execute();
 
-    $stmt->execute();
+    var_dump($hoge);
 
-    header('Location: index.html');
+
+//    header('Location: index.html');
 } catch (Exception $e) {
     var_dump($e);
 }
