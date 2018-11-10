@@ -7,9 +7,9 @@
 //        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 //        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'select password,name from users where id = ?';
+        $sql = 'select password,name from users where userId = :userId';
         $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(1, $_POST['id']);
+        $stmt->bindValue(':userId', $_POST['id'], \PDO::PARAM_INT);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $password = $row['password'];

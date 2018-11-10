@@ -7,15 +7,13 @@
     header('Content-Type: text/html; charset=utf8');
     require_once 'database_conf.php';
 
-//    $db = new PDO($dsn, $dbUser, $dbPass);
-//    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-//    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sql = 'INSERT INTO comments (comment,userId) VALUES (?,?)';
+    $sql = 'INSERT INTO comments (comment,userId) VALUES (:comment,:userId)';
     $stmt = $pdo->prepare($sql);
-    $data[] =  $_POST['comment'];
-    $data[] = $_SESSION['id'];
-    // $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
-    // $stmt->bindValue(':comment', $comment, \PDO::PARAM_STR);
-    $stmt->execute($data);
+
+    $stmt->bindValue(':comment', $_POST['comment'], \PDO::PARAM_STR);
+    $stmt->bindValue(':userId', $_SESSION['id'], \PDO::PARAM_STR);
+
+//    $data[] =  $_POST['comment'];
+//    $data[] = $_SESSION['id'];
+    $stmt->execute();
     header('Location: comment.php');
