@@ -32,7 +32,7 @@
 //        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 //        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT comment,name  FROM comments,users WHERE comments.userId=users.id';
+        $sql = 'SELECT comment,name  FROM comments,users WHERE comments.userId=users.userId';
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $messages = $stmt->fetchAll();
