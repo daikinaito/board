@@ -1,7 +1,7 @@
 <?php
     require_once 'database_conf.php';
 
-    $sql = 'INSERT INTO users (id, name, password) VALUES (?,?,?)';
+    $sql = 'INSERT INTO users (userId, name, password) VALUES (?,?,?)';
     $stmt = $pdo->prepare($sql);
 
     $data[] = $_POST['id'];
