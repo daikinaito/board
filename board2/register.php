@@ -14,7 +14,7 @@ try {
 
     $stmt->execute();
 
-//    header('Location: index.html');
+    header('Location: index.html');
 } catch (Exception $e) {
     var_dump($e);
 }
