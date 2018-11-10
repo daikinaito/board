@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+try {
     require_once 'database_conf.php';
 
     $sql = 'INSERT INTO users (userId, name, password) VALUES (:userId, :name, :password)';
@@ -11,3 +15,6 @@
     $stmt->execute();
 
     header('Location: index.html');
+} catch (Exception $e) {
+    var_dump($e);
+}
