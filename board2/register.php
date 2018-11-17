@@ -39,13 +39,15 @@ try {
             $stmt->bindValue(':password', $_POST['password'], \PDO::PARAM_STR);
             $stmt->execute();
             echo '登録されました。';
-            print '<a href="http://utology-internship3/board/board2/">ログイン画面へ</a><br />';
+            print '<a href="http://utology-internship3/board/board2/register.html">登録画面へ</a><br />';
         } else {
             echo 'そのIDはすでに使われています。';
         }
     } else {
-        foreach($errors as $value)
-        echo $value . "<br>";
+        foreach($errors as $value){
+            echo $value . "<br>";
+        }
+        print '<a href="http://utology-internship3/board/board2/">ログイン画面へ</a><br />';
     }
 
 //    header('Location: index.html');
