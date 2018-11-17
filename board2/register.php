@@ -38,8 +38,8 @@ try {
             $stmt->bindValue(':name', $_POST['name'], \PDO::PARAM_STR);
             $stmt->bindValue(':password', $_POST['password'], \PDO::PARAM_STR);
             $stmt->execute();
-
-            var_dump($stmt->fetch());
+            echo '登録されました。';
+            print '<a href="http://utology-internship3/board/board2/">ログイン画面へ</a><br />';
         } else {
             echo 'そのIDはすでに使われています。';
         }
