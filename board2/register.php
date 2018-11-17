@@ -25,9 +25,9 @@ try {
                 $stmt->bindValue(':userId', $_POST['id'], \PDO::PARAM_INT);
                 $stmt->bindValue(':name', $_POST['name'], \PDO::PARAM_STR);
                 $stmt->bindValue(':password', $_POST['password'], \PDO::PARAM_STR);
-                $output = $stmt->execute();
+                $stmt->execute();
 
-                var_dump($output);
+                var_dump($stmt->fetch());
             } else {
                 echo 'そのIDはすでに使われています。';
             }
