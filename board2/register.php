@@ -16,7 +16,7 @@ try {
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':userId', $_POST['id'], \PDO::PARAM_INT);
             $exist = $stmt->execute();
-            echo ''2;
+            echo '2';
             if(empty($exist)){
                 echo '3';
                 $sql = 'INSERT INTO users (userId, name, password) VALUES (:userId, :name, :password)';
