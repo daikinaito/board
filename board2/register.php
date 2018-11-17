@@ -9,19 +9,19 @@ try {
     if(isset($_POST['id']) && $_POST['id'] !== '' && is_numeric($_POST['id'])) {
        $id = $_POST['id'];
     } else {
-        $errors[] = 'idが不正';
+        $errors[] = 'idが不正です';
     }
 
     if(isset($_POST['name']) && $_POST['name'] !== '') {
         $id = $_POST['name'];
     } else {
-        $errors[] = 'nameが不正';
+        $errors[] = '名前が不正です';
     }
 
     if(isset($_POST['password']) && $_POST['password'] !== '') {
         $id = $_POST['password'];
     } else {
-        $errors[] = 'passwordが不正';
+        $errors[] = 'パスワードが不正です';
     }
 
 
@@ -44,7 +44,8 @@ try {
             echo 'そのIDはすでに使われています。';
         }
     } else {
-        echo '全ての値を入力してください';
+        foreach($errors as $value)
+        echo $value . "<br>";
     }
 
 //    header('Location: index.html');
