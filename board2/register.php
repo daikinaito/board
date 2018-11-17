@@ -1,4 +1,13 @@
 <?php
+// smarty のライブラリを読み込みます
+include_once __DIR__ . '/libs/smarty.class.php';
+
+// smartyを宣言して設定を書き加えます
+$smarty = new Smarty();
+$smarty->escape_html = true;
+$smarty->template_dir = __DIR__ . '/templates';
+$smarty->compile_dir = __DIR__ . '/templates_c';
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
