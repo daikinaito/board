@@ -10,8 +10,8 @@ try {
     $password = $_POST['password'];
 
     if(isset($id) and isset($name) and isset($password)){
-        echo '1';
-        if (is_int($id)) {
+        var_dump($id);
+        if (is_numeric($id)) {
             $sql = 'SELECT * FROM users WHERE userId = :userId';
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':userId', $_POST['id'], \PDO::PARAM_INT);
