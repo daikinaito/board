@@ -15,9 +15,10 @@ try {
             $sql = 'SELECT * FROM users WHERE userId = :userId';
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':userId', $_POST['id'], \PDO::PARAM_INT);
-            $exist = $stmt->execute();
+            $stmt->execute();
+            var_dump($stmt->fetch());
             echo '2';
-            if(empty($exist)){
+            if(empty($stmt->fetch())){
                 echo '3';
                 $sql = 'INSERT INTO users (userId, name, password) VALUES (:userId, :name, :password)';
                 $stmt = $pdo->prepare($sql);
