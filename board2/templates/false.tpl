@@ -8,7 +8,7 @@
     <body>
         <p>ログインされていません。<br>
         <br>
-        <a href="index.html">ログイン画面へ</a>
+        <a href="index.tpl">ログイン画面へ</a>
 
     </body>
 </html>

@@ -13,7 +13,7 @@
             <button type="submit">ログイン</button>
         </form>
 
-        <a href="register.html">新規登録</a>
+        <a href="register.tpl">新規登録</a>
     </body>
     
 </html>
