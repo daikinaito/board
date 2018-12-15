@@ -11,6 +11,6 @@
     $stmt = $pdo->prepare($sql);
 
     $stmt->bindValue(':comment', $_POST['comment'], \PDO::PARAM_STR);
-    $stmt->bindValue(':userId', $_SESSION['id'], \PDO::PARAM_STR);s
+    $stmt->bindValue(':userId', $_SESSION['id'], \PDO::PARAM_STR);
     $stmt->execute();
     header('Location: comment.php');
