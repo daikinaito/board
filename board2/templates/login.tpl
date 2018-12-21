@@ -6,7 +6,9 @@
     </head>
 
     <body>
-        {$message}
+        {if $message}
+            {$message}
+        {/if}
         <a href="index.php">前画面へ</a>
     </body>
 </html>
