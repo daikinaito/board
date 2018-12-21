@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 // smarty のライブラリを読み込みます
 include_once __DIR__ . '/libs/Smarty.class.php';
 
