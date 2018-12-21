@@ -28,7 +28,7 @@ if (isset($_POST['id']) && isset($_POST['password'])){
         $_SESSION['id'] = $_POST['id'];
         $_SESSION['login'] = 1;
         $_SESSION['name'] = $name;
-        //header('Location: comment.php');
+        header('Location: comment.php');
     }else{
         $message = 'IDまたはパスワードが間違っています。';
         $smarty->assign("message", $message);
