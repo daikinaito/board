@@ -8,7 +8,7 @@ $smarty->escape_html = true;
 $smarty->template_dir = __DIR__ . '/templates';
 $smarty->compile_dir = __DIR__ . '/templates_c';
 
-if (isset($_POST['id']) and isset($_POST['password'])){
+if (isset($_POST['id']) && isset($_POST['password'])){
     require_once 'database_conf.php';
     header('Content-Type: text/html; charset=utf8');
 //        $db = new PDO($dsn, $dbUser, $dbPass);
@@ -22,16 +22,13 @@ if (isset($_POST['id']) and isset($_POST['password'])){
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $password = $row['password'];
     $name = $row['name'];
-    $post_password = $_POST['password'];
-
-
 
     if($password === $_POST['password']){
         session_start();
         $_SESSION['id'] = $_POST['id'];
         $_SESSION['login'] = 1;
         $_SESSION['name'] = $name;
-        header('Location: comment.php');
+        //header('Location: comment.php');
     }else{
         $message = 'IDまたはパスワードが間違っています。';
         $smarty->assign("message", $message);
