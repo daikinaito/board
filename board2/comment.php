@@ -26,7 +26,7 @@
     $stmt->execute();
     $messages = $stmt->fetchAll();
 
-    $smarty->assign("messages", $messages);
+    $smarty->assign('messages', $messages);
 
 //    foreach($messages as $result){
 //        echo $result['name'];

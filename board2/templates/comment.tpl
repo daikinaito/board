@@ -12,8 +12,8 @@
             <input type="text" name="comment"><br>
             <button type="submit">クリック</button>
         </form>
-        {foreach $messages as $massage}
-            {$message[name]}:{$message[comment]}
+        {foreach $messages as $message}
+            {$message.name}:{$message.comment}
             <br>
         {/foreach}
         <a href="logout.php">ログアウト</a>
