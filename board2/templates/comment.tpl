@@ -13,7 +13,7 @@
             <button type="submit">クリック</button>
         </form>
         {foreach $messages as $massage}
-            {$message.name}:{$message.comment}
+            {$message[name]}:{$message[comment]}
             <br>
         {/foreach}
         <a href="logout.php">ログアウト</a>
