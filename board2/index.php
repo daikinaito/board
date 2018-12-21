@@ -8,8 +8,8 @@ $smarty->escape_html = true;
 $smarty->template_dir = __DIR__ . '/templates';
 $smarty->compile_dir = __DIR__ . '/templates_c';
 
-if(isset($_SESSION['login'])==false){
-    header('Location: false.html');
-}
+//if(isset($_SESSION['login'])==false){
+//    header('Location: false.html');
+//}
 
 $smarty->display('index.tpl');
