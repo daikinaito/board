@@ -21,9 +21,11 @@
             {$link}
         {/if}
         <ul>
-            {foreach $errors as $error}
-                <li>{$error}</li>
-            {/foreach}
+            {if $errors}
+                {foreach $errors as $error}
+                    <li>{$error}</li>
+                {/foreach}
+            {/if}
         </ul>
     </body>
 </html>
