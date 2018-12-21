@@ -14,5 +14,16 @@
             <input type="text" name="password" placeholder="パスワード"><br>
             <button type="submit">登録</button>
         </form>
+        {if $message}
+            {$message}
+        {/if}
+        {if $link}
+            {$link}
+        {/if}
+        <ul>
+            {foreach $errors as $error}
+                <li>{$error}</li>
+            {/foreach}
+        </ul>
     </body>
 </html>

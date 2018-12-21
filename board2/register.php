@@ -47,19 +47,23 @@ try {
             $stmt->bindValue(':name', $_POST['name'], \PDO::PARAM_STR);
             $stmt->bindValue(':password', $_POST['password'], \PDO::PARAM_STR);
             $stmt->execute();
-            echo '登録されました。';
-            print '<a href="http://utology-internship3/board/board2/register.html">登録画面へ</a><br />';
+            $message = '登録されました。';
+            $smarty->assign('message', $message);
+            $link = '<a href="http://utology-internship3/board/board2/register.html">登録画面へ</a><br />';
+            $smarty->assign('link', $link);
         } else {
-            echo 'そのIDはすでに使われています。';
+            $message = 'そのIDはすでに使われています。';
+            $smarty->assign('message', $message);
         }
     } else {
-        foreach($errors as $value){
-            echo $value . "<br>";
-        }
-        print '<a href="http://utology-internship3/board/board2/">ログイン画面へ</a><br />';
+        $smarty->assign('errors', $errors);
+//        foreach($errors as $value){
+//            echo $value . "<br>";
+//        }
+        $link = '<a href="http://utology-internship3/board/board2/">ログイン画面へ</a><br />';
+        $smarty->assign('link', $link);
     }
-
-//    header('Location: index.html');
+    $smarty->display('register.tpl');
 } catch (Exception $e) {
     var_dump($e);
 }
