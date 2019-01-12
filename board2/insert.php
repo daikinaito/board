@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['login'])==false){
-        header('Location: false.html');
+        header('Location: false.php');
     }
     header('Content-Type: text/html; charset=utf8');
     require_once 'database_conf.php';
