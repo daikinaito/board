@@ -12,6 +12,7 @@
             <input type="text" name="id" placeholder="ID"><br>
             <input type="text" name="name" placeholder="名前"><br>
             <input type="text" name="password" placeholder="パスワード"><br>
+            <input type="hidden" name="mode" value="commit">
             <button type="submit">登録</button>
         </form>
         {if $message}
