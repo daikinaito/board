@@ -11,7 +11,7 @@
     session_start();
 
     if(isset($_SESSION['login'])==false){
-            header('Location: false.html');
+            header('Location: false.php');
     }
 
     $name=$_SESSION['name'];
