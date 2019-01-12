@@ -17,9 +17,6 @@
         {if $message}
             {$message}
         {/if}
-        {if $link}
-            {$link}
-        {/if}
         <ul>
             {if $errors}
                 {foreach $errors as $error}
