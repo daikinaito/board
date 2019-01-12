@@ -27,5 +27,6 @@
                 {/foreach}
             {/if}
         </ul>
+        <a href="index.php">ログイン画面へ</a>
     </body>
 </html>
