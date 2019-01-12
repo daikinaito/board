@@ -57,7 +57,9 @@ try {
             $smarty->assign('message', $message);
         }
     } else {
-        $smarty->assign('errors', $errors);
+        if(isset($_POST['mode'])){
+            $smarty->assign('errors', $errors);
+        }
     }
     $smarty->display('register.tpl');
 } catch (Exception $e) {
