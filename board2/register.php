@@ -34,6 +34,8 @@ try {
         $errors[] = 'パスワードが不正です';
     }
 
+    $smarty->assign('errors', []);
+    $smarty->assign('message', []);
 
     if(empty($errors)) {
         $sql = 'SELECT * FROM users WHERE userId = :userId';
@@ -50,19 +52,12 @@ try {
             $stmt->execute();
             $message = '登録されました。';
             $smarty->assign('message', $message);
-            $link = '<a href="http://utology-internship3/board/board2/register.html">登録画面へ</a><br />';
-            $smarty->assign('link', $link);
         } else {
             $message = 'そのIDはすでに使われています。';
             $smarty->assign('message', $message);
         }
     } else {
         $smarty->assign('errors', $errors);
-//        foreach($errors as $value){
-//            echo $value . "<br>";
-//        }
-        $link = '<a href="http://utology-internship3/board/board2/">ログイン画面へ</a><br />';
-        $smarty->assign('link', $link);
     }
     $smarty->display('register.tpl');
 } catch (Exception $e) {
